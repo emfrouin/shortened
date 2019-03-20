@@ -6,11 +6,13 @@ services:
       replicas: 2
       restart_policy:
         condition: on-failure
+        delay: 10s
+        max_attempts: 5
+        window: 120s
     ports:
       - "3000:3000"
-    networks:
-      - front
-      - back
+    depends_on:
+      - db
   proxy:
     image: shorten-proxy
     deploy:
@@ -19,8 +21,6 @@ services:
         condition: on-failure
     ports:
       - "80:80"
-    networks:
-      - front
   db:
     image: mongo:3.4.20-jessie
     deploy:
@@ -29,8 +29,4 @@ services:
         condition: on-failure
     ports:
       - "27017:27017"
-    networks:
-      - back
-networks:
-  front:
-  back:
+

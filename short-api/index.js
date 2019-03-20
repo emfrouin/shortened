@@ -1,10 +1,10 @@
 const express = require("express");
 const mongoose = require("mongoose");
-var bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
 const assert = require('assert');
 const app = express();
 const PORT = 3000;
-const mongoURI = "mongodb://url-shortener_db:27017/shorturls";
+const mongoURI = "mongodb://db:27017/shorturls";
 require('./models/ShortUrl');
 require('./models/analytics');
 const connectOptions = {

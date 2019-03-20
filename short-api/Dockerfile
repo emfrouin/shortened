@@ -19,8 +19,8 @@ COPY routes routes
 # setup permissions
 RUN chown -R api:api /app
 USER api
-HEALTHCHECK --interval=1s --timeout=1s --start-period=1m --retries=5 \
-    CMD curl -f --insecure http://localhost:3000/healthcheck || exit 1
+#HEALTHCHECK --interval=1s --timeout=1s --start-period=1m --retries=5 \
+#    CMD curl -f --insecure http://localhost:3000/healthcheck || exit 1
 CMD ["npm","run", "start"]
 #CMD exec /bin/bash -c "trap : TERM INT; sleep 1000000 & wait"
 
