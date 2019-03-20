@@ -12,6 +12,7 @@ WORKDIR /app
 
 COPY package.json .
 RUN npm install && chown -R api:api /app
+COPY index.js index.js
 COPY lib lib
 COPY models models
 COPY routes routes
