@@ -1,0 +1,36 @@
+version: "3"
+services:
+  api-server:
+    image: api-server
+    deploy:
+      replicas: 2
+      restart_policy:
+        condition: on-failure
+    ports:
+      - "3000:3000"
+    networks:
+      - front
+      - back
+  proxy:
+    image: shorten-proxy
+    deploy:
+      replicas: 2
+      restart_policy:
+        condition: on-failure
+    ports:
+      - "80:80"
+    networks:
+      - front
+  db:
+    image: mongo:3.4.20-jessie
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+    ports:
+      - "27017:27017"
+    networks:
+      - back
+networks:
+  front:
+  back:
