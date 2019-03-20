@@ -6,8 +6,8 @@ ENV NODE_ENV $NODE_ENV
 
 RUN mkdir /app && mkdir /app/env && \
     # create api user
-    groupadd api -g 1042 && \
-    useradd api -g api -u 1042 -m -d /home/api
+    addgroup -S api && \
+    adduser  -S api -G api -D -h /home/api
 WORKDIR /app
 
 COPY package.json .
