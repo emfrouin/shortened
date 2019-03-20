@@ -11,8 +11,7 @@ RUN mkdir /app && mkdir /app/env && \
 WORKDIR /app
 
 COPY package.json .
-COPY package-lock.json .
-RUN npm ci && chown -R api:api /app
+RUN npm install && chown -R api:api /app
 COPY lib lib
 COPY models models
 COPY routes routes
