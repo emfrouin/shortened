@@ -12,10 +12,10 @@
   "license": "ISC",
   "dependencies": {
     "express": "4.16.4",
-    "is-url": "^1.2.4",
-    "mongoose": "^5.4.19",
-    "nanoid": "^2.0.1",
-    "normalize-url": "^4.2.0"
+    "is-url": "1.2.4",
+    "mongoose": "5.4.19",
+    "nanoid": "2.0.1",
+    "normalize-url": "4.2.0"
   },
   "devDependencies": {
     "nodemon": "^1.18.10"
