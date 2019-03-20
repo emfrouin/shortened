@@ -16,12 +16,6 @@ Build the proxy
 docker build -t shorten-proxy ./shorten-proxy
 ```
 
-Pull mongo
-
-```
-docker pull mongo:3.4.20-jessie
-```
-
 Deploy the stack
 
 ```
