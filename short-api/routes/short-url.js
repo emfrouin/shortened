@@ -3,7 +3,7 @@ const isUrl = require('is-url');
 const shortenLib = require('../lib/ShortUrl');
 const ShortUrl = mongoose.model("ShortUrl");
 const Analytics = mongoose.model("Analytics");
-const SHORT_BASE = "localhost/";
+const SHORT_BASE = "sk.sh";
 const ERROR_URL = "http://localhost:3000/404.html";
 module.exports = app => {
     //GET API for redirecting to Original URL
